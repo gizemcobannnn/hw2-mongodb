@@ -11,6 +11,8 @@ import express from 'express';
 import cors from 'cors';
 import pino from 'pino';
 import {getAllContacts, getContactById} from './services/contacts.js';
+import errorHandler from './middlewares/errorHandler.js';
+import notFoundHandler from './middlewares/notFoundHandler.js';
 const setupServer = ()=>{
     const server = express();
 
@@ -96,6 +98,10 @@ server.get('*',(req,res)=>{
         message: "Not available route",
     });
 });
+
+
+server.use(errorHandler);
+server.use(notFoundHandler);
 
 server.listen(PORT,()=>{
     logger.info(`Server is running on port ${PORT}`);
