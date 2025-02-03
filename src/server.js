@@ -11,6 +11,7 @@ import cors from 'cors';
 import pino from 'pino';
 import errorHandler from './middlewares/errorHandler.js';
 import notFoundHandler from './middlewares/notFoundHandler.js';
+import contactRouters from './routers/contacts.js';
 
 
 
@@ -33,6 +34,7 @@ const setupServer = ()=>{
 
     const PORT= Number(process.env.PORT || 3000 );
 
+    server.use('/',contactRouters);
 
 
 server.use(errorHandler);

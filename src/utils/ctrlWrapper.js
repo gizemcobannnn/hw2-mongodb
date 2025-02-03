@@ -7,3 +7,5 @@ export const ctrlWrapper = async(controller) =>{
         }
     }
 }
+
+export default ctrlWrapper;

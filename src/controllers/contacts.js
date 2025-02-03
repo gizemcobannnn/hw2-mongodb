@@ -1,6 +1,6 @@
 //server.jsdki controllerkoduburaya tasinvak
 import createHttpError from "http-errors";
-import { createContact,updateContact,deleteContact, getContactById, getAllContacts } from "../services/contacts"
+import { createContact,updateContact,deleteContact, getContactById, getAllContacts } from "../services/contacts.js"
 
 export const getContactsController = async(req,res)=>{
     
@@ -95,11 +95,4 @@ export const deleteContactController = async(req,res,next)=>{
         data: deletedContact,
     })
     
-}
-
-export const notFoundController = (req,res) =>{
-    res.status(404).json({
-        status: 404,
-        message: "Not available route",
-    });
 }
