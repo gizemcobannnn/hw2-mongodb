@@ -19,17 +19,15 @@ const contactsSchema = new Schema(
     email: {
       type: String,
       required: true,
-      enum: ['male', 'female', 'other'],
     },
     isFavourite: {
         type: Boolean,
         required: true,
-        enum: ['male', 'female', 'other'],
       },
     contactType: {
         type: String,
         required: true,
-        enum: ['male', 'female', 'other'],
+        enum: ['personal', 'home', 'other'],
     },
 
   },
